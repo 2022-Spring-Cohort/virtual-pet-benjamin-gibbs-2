@@ -22,8 +22,15 @@ Rather than using numbers to convey your pet’s status, you could have some sor
 
 
 ## Iteration 2
+Need to add shelter - array lists
 Our pets are housed in a shelter and cared for by you. You can interact with one pet at a time, or all pets. They can be adopted.
 - [ ]    Ability for players to admit pets into the shelter or adopt them
 - [ ]    Ability for players to see a list of all pets in the shelter
-- [ ]    Ability for players to see the current status of all pets at once, such as hunger, boredom, and health
-- [ ]    Ability for players to choose to interact with one pet or multiple pets, such as feed, play, and take to doctor
+- [ ]    Ability for players to see the current status of ONE pet: such as hunger, boredom, and health
+- [ ]    Ability for players to see the current status of ALL PETS AT ONCE, such as hunger, boredom, and health
+
+
+        - break Status call into individual Status calls (still keep MasterStatus) - make way to arrange information in a readable format.
+- [ ]    Ability for players to choose to interact with ONE PET, such as feed, play, and take to doctor
+- [ ]    Ability for players to choose to interact with ALL PETS, such as feed, play, and take to doctor
+
