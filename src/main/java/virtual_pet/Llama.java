@@ -21,6 +21,9 @@ public class Llama extends Mammal {
         return type;
     }
 
-
+//    @Override
+//public void walking(int speed) {
+//        System.out.println("Llamas walk at " + speed + " miles per hour!S");
+//    }
 }
 

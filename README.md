@@ -34,3 +34,33 @@ Our pets are housed in a shelter and cared for by you. You can interact with one
 - [ ]    Ability for players to choose to interact with ONE PET, such as feed, play, and take to doctor
 - [ ]    Ability for players to choose to interact with ALL PETS, such as feed, play, and take to doctor
 
+# MOVE MENUS AND INTERACTION CHOICES TO METHODS AND OUT OF MAIN!!
+#Sprint 2
+Deliverables
+
+All prior functionality, plus:
+
+- [ ]    Don't forget to add tests!
+- [ ]    Useful player instructions in the form of a README.md file
+- [ ]    Create a VirtualPetShelter class that will be used to manage multiple pets
+- [ ]    Ability to intake many pets into the VirtualPetShelter
+- [ ]    Ability for players to see a list of all pets in the shelter, for example with name and the attributes of your Virtual Pets
+- [ ]    Ability for players to interact with one pet or multiple pets, such as feed, play, and water/drink.
+- [ ]    Ability for players to see the current status of all pets in a table (see example below for inspiration)
+
+| Name     | Boredom | Hunger | Thirst |
+
+| -------- | ------ | ------- | ------ |
+
+| Fido     | 43     | 22      | 43     |
+
+| Fluffles | 63     | 34      | 56     |
+#Sprint 3
+Deliverables
+
+- [ ]    Support for 4 types of pets: Organic Cats, Organic Dogs, Robotic Cats, Robotic Dogs.
+- [ ]    Robots require oil and maintenance.
+- [ ]    Organic cats and dogs require cage & litter box cleaning.
+- [ ]    Allow users to take dogs on walks.
+- [ ]    Walking organic pets decreases the rate at which they soil their cages/litter boxes.
+- [ ]    Walking robotic pets increases their need for oil and maintenance.

@@ -26,7 +26,7 @@ public abstract class Mammal extends Animal {
     }
 
 
-
+//    public abstract void walking(int speed);
 }
 
 

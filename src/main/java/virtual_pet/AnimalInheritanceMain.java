@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class AnimalInheritanceMain {
 
+static PetShelter myShelter;
+AdoptionShelter myAdoptionShelter;
+
         public static void main(String[] args) {
                 PetShelter currentAnimalsInShelter = new PetShelter();
                 Animal jahi = new Llama("Jahi", 23, "he");
@@ -33,6 +36,8 @@ public class AnimalInheritanceMain {
                                 case "1":
                                         System.out.println("Here are the names of all the pets in the Shelter:");
                                         currentAnimalsInShelter.getListNames();
+
+//                                        currentAdopted.getAdoptedListNames();
                                         break;
                                 case "2":
                                         System.out.println("how many pets are we taking into the shelter today?" +
@@ -131,6 +136,7 @@ public class AnimalInheritanceMain {
 //                        currentAnimaAdopted.getAdoptedListNames();
                                                         break;
                                         }
+                                        break;
                                 case "4":
                                         System.out.println("Which pet would you like to interact with today?");
                                         currentAnimalsInShelter.getListNames();

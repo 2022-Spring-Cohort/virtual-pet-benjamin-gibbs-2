@@ -18,7 +18,7 @@ public class MetallicTressym extends Metallic{
         return "MetallicTressym{" +
                 "name='" + name + '\'' +
                 ", oilLevel=" + oilLevel +
-                ", repairLevel=" + repairLevel +
+                ", maintenanceLevel=" + maintenanceLevel +
                 ", classification='" + classification + '\'' +
                 ", type='" + type + '\'' +
                 '}';

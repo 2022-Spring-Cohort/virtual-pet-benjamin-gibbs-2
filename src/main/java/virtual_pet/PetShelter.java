@@ -6,10 +6,21 @@ public class PetShelter {
     ArrayList<Animal> animalsInPetShelter;
 
     public PetShelter() {
-        this.animalsInPetShelter = new ArrayList<>();
+        animalsInPetShelter = new ArrayList<Animal>();
+        animalsInPetShelter.add(new Llama("test23", 23, "she"));
+        animalsInPetShelter.add(new Llama("254TESTLLAMA", 23, "she"));
+        Animal jahi = new Llama("Jahi2", 23, "he");
+        Animal kakau = new Tressym("Kakau", 01, "he");
+        Animal aui = new Llama("Aui", 18, "she");
+        Animal zalika = new Tressym("Zalika", 22, "other");
+        animalsInPetShelter.add(jahi);
+        animalsInPetShelter.add(kakau);
+        animalsInPetShelter.add(aui);
+        animalsInPetShelter.add(zalika);
     }
 
     public void addAnimal(Animal animal) {
+
         animalsInPetShelter.add(animal);
     }
 
@@ -73,7 +84,7 @@ public class PetShelter {
     }
     public void robotTick() {
         Metallic.oilLevel -= 1;
-        Metallic.repairLevel -= 1;
+        Metallic.maintenanceLevel -= 1;
         Animal.boredomLevel += 1;
     }
 //    public String indexOf(String Sammy) {

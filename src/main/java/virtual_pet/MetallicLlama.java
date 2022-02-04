@@ -18,7 +18,7 @@ public class MetallicLlama extends Metallic {
         return "MetallicLlama{" +
                 "name='" + name + '\'' +
                 ", oilLevel=" + oilLevel +
-                ", repairLevel=" + repairLevel +
+                ", maintenanceLevel=" + maintenanceLevel +
                 ", classification='" + classification + '\'' +
                 ", type='" + type + '\'' +
                 '}';

@@ -7,8 +7,8 @@ public abstract class Animal {
     private String species;
     protected static int boredomLevel;
     private int wasteLevel;
-    private int sicknessLevel;
-    private static int cuddleLevel;
+    private int sicknessLevel;  //REMOVE THIS LINE ...
+    private static int cuddleLevel; //...AND THIS LINE...?
     private static int happinessLevel;
     private String pronouns;
     private String pronoun2;
@@ -19,7 +19,7 @@ public abstract class Animal {
         this.name = name;
         this.age = age;
     //    this.type = type;
-        this.boredomLevel = 5;
+        this.boredomLevel = (int) Math.floor(Math.random() * (70 - 30) + 30);
         this.wasteLevel = 5;
         this.sicknessLevel = 5;
         this.cuddleLevel = 5;
