@@ -1,29 +1,26 @@
 package virtual_pet;
 
-public class Llama extends Mammal {
+public class Llama extends Mammal implements Walkable{
     private String type;
 
     public Llama(String name, int age, String pronouns) {
         super(name, age, pronouns);
-        this.type = "llama";
+        this.type = "organic llama";
     }
 
-    @Override
-    public String toString() {
-        return "Llama{" +
-                "name='" + name + '\'' +
-                ", classification='" + classification + '\'' +
-                '}';
-    }
+@Override
+public void walk() {
+        Mammal.hungerLevel -= 20;
+        Animal.boredomLevel += 40;
+        Mammal.thirstLevel -= 20;
+        Mammal.wasteLevel -= 20;
+}
 
-    @Override
+@Override
     public String getType() {
         return type;
     }
 
-//    @Override
-//public void walking(int speed) {
-//        System.out.println("Llamas walk at " + speed + " miles per hour!S");
-//    }
+
 }
 

@@ -30,7 +30,7 @@ Attributes (instance variables) that a virtual pet might have, along with some i
 
 - hunger (feed it)
 - thirst (water it)
-- waste (let it out to the bathroom)
+-  waste (let it out to the bathroom)
 - boredom (play with it)
 - sickness (take it to the doctor)
 

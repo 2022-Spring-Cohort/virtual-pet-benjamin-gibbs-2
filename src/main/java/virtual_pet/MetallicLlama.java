@@ -1,6 +1,6 @@
 package virtual_pet;
 
-public class MetallicLlama extends Metallic {
+public class MetallicLlama extends Metallic implements Walkable {
     private String type;
 
     public MetallicLlama(String name, int age, String pronouns) {
@@ -14,13 +14,9 @@ public class MetallicLlama extends Metallic {
     }
 
     @Override
-    public String toString() {
-        return "MetallicLlama{" +
-                "name='" + name + '\'' +
-                ", oilLevel=" + oilLevel +
-                ", maintenanceLevel=" + maintenanceLevel +
-                ", classification='" + classification + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+    public void walk() {
+        Metallic.oilLevel -=10;
+        Metallic.maintenanceLevel -=10;
+        Metallic.chargeLevel -=20;
     }
 }

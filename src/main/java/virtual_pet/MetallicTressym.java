@@ -5,7 +5,7 @@ public class MetallicTressym extends Metallic{
 
     public MetallicTressym(String name, int age, String pronouns) {
         super(name, age, pronouns);
-        this.type = "Metallic tressym";
+        this.type = "metallic tressym";
     }
 
     @Override
@@ -13,14 +13,4 @@ public class MetallicTressym extends Metallic{
         return type;
     }
 
-    @Override
-    public String toString() {
-        return "MetallicTressym{" +
-                "name='" + name + '\'' +
-                ", oilLevel=" + oilLevel +
-                ", maintenanceLevel=" + maintenanceLevel +
-                ", classification='" + classification + '\'' +
-                ", type='" + type + '\'' +
-                '}';
-    }
 }
