@@ -1,6 +1,6 @@
 package virtual_pet;
 
-public class MetallicLlama extends Metallic implements Walkable {
+public class MetallicLlama extends Metallic implements Walkable{
     private String type;
 
     public MetallicLlama(String name, int age, String pronouns) {
@@ -12,6 +12,7 @@ public class MetallicLlama extends Metallic implements Walkable {
     public String getType() {
         return type;
     }
+
 
     @Override
     public void walk() {

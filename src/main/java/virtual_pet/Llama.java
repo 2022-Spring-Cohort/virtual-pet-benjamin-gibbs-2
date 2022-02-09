@@ -1,6 +1,6 @@
 package virtual_pet;
 
-public class Llama extends Mammal implements Walkable{
+public class Llama extends Mammal implements Walkable {
     private String type;
 
     public Llama(String name, int age, String pronouns) {

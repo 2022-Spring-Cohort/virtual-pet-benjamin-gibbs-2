@@ -1,6 +1,6 @@
 package virtual_pet;
 
-public class Tressym extends Mammal {
+public class Tressym extends Mammal implements Flying {
 private String type;
 
     public Tressym(String name, int age, String pronouns) {
@@ -8,6 +8,13 @@ private String type;
         this.type = "organic tressym";
     }
 
+    @Override
+    public void fly() {
+        Mammal.hungerLevel -= 20;
+        Animal.boredomLevel += 40;
+        Mammal.thirstLevel -= 20;
+        Mammal.wasteLevel -= 20;
+    }
 
 
     @Override

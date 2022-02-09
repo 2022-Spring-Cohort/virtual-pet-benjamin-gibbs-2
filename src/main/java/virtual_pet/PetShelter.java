@@ -159,6 +159,25 @@ public class PetShelter {
             }
     }
 
+    public void allFly() {
+        for (Animal petsToTakeFlying : petShelter)
+            if (petsToTakeFlying instanceof MetallicTressym ) {
+                ((MetallicTressym) petsToTakeFlying).fly();
+            }
+            else if (petsToTakeFlying instanceof Tressym) {
+                ((Tressym) petsToTakeFlying).fly();
+            }
+    }
+
+    public void allWalk() {
+        for (Animal petsToTakeWalking : petShelter)
+            if (petsToTakeWalking instanceof MetallicLlama ) {
+                ((MetallicLlama) petsToTakeWalking).walk();
+            }
+            else if (petsToTakeWalking instanceof Llama) {
+                ((Llama) petsToTakeWalking).walk();
+            }
+    }
 //    public void allStatus() {
 //        for( Animal currentAnimals : petShelter)
 //            currentAnimals.getStatus();

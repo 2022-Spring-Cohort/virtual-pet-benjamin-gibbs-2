@@ -120,157 +120,210 @@ public class Game {
                                         myShelter.getListNames();
                                         Scanner intSing = new Scanner(System.in);
                                         String interactSingly = intSing.nextLine().trim();
-                                        Animal chosenPet = null;
                                         for (Animal selectedPet : myShelter.getPetNames()) {
                                                 if (selectedPet.getName().equalsIgnoreCase(interactSingly)) {
-                                                        chosenPet = (Animal) selectedPet;
-                                                        if (chosenPet != null) {
-                                                                System.out.println("What would you like to do with " + selectedPet.getName() + " today?" +
-                                                                        "\n1: PLAY" +
-                                                                        "\n2: FEED" +
-                                                                        "\n3: WATER" +
-                                                                        "\n4: CLEAN" +
-                                                                        "\n5: OIL" +
-                                                                        "\n6: CHARGE" +
-                                                                        "\n7: MAINTENANCE" +
-                                                                        "\n8: WALK" +
-                                                                        "\n9: STATUS");
-                                                                Scanner petIntact = new Scanner(System.in);
-                                                                String petInteract = petIntact.nextLine();
-                                                                switch (petInteract) {
-                                                                        case "1": // PLAY
-                                                                                for (Animal currentPet : myShelter.getPetNames()) {
-                                                                                        if (currentPet instanceof Mammal) {
-                                                                                                if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
-                                                                                                        currentPet.play();
-                                                                                                        System.out.println(currentPet.singlePlayMessage());
-                                                                                                }
-                                                                                        }
-                                                                                        if (currentPet instanceof Metallic) {
-                                                                                                if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
-                                                                                                        currentPet.play();
-                                                                                                        System.out.println(currentPet.singlePlayMessage());
-                                                                                                }
-                                                                                        }
-                                                                                }
-                                                                                break;
 
-                                                                        case "2": // FEED
-                                                                                for (Animal currentPet : myShelter.getPetNames()) {
-                                                                                        if (currentPet instanceof Mammal) {
-                                                                                                if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
-                                                                                                        ((Mammal) currentPet).feed();
-                                                                                                        System.out.println(currentPet.allFeedMessage());
-                                                                                                }
-                                                                                        }
-                                                                                        if (currentPet instanceof Metallic) {
-                                                                                                if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
-                                                                                                        System.out.println(currentPet.getName() + " is a " + currentPet.getClassification() + " pet and doesn't need to be feed.");
-                                                                                                }
-                                                                                        }
-                                                                                }
-                                                                                break;
 
-                                                                        case "3": // WATER
-                                                                                for (Animal currentPet : myShelter.getPetNames()) {
-                                                                                        if (currentPet instanceof Mammal) {
-                                                                                                if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
-                                                                                                        ((Mammal) currentPet).water();
-                                                                                                        System.out.println(currentPet.allWaterMessage());
-                                                                                                }
-                                                                                        }
-                                                                                        if (currentPet instanceof Metallic) {
-                                                                                                if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
-                                                                                                        System.out.println(currentPet.getName() + " is a " + currentPet.getClassification() + " pet and doesn't need water.");
-                                                                                                }
+                                                        System.out.println("What would you like to do with " + selectedPet.getName() + " today?" +
+                                                                "\n1: PLAY" +
+                                                                "\n2: FEED" +
+                                                                "\n3: WATER" +
+                                                                "\n4: CLEAN" +
+                                                                "\n5: OIL" +
+                                                                "\n6: CHARGE" +
+                                                                "\n7: MAINTENANCE" +
+                                                                "\n8: WALK/FLY" +
+                                                                "\n9: STATUS");
+                                                        Scanner petIntact = new Scanner(System.in);
+                                                        String petInteract = petIntact.nextLine();
+                                                        switch (petInteract) {
+                                                                case "1": // PLAY
+                                                                        for (Animal currentPet : myShelter.getPetNames()) {
+                                                                                if (currentPet instanceof Mammal) {
+                                                                                        if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
+                                                                                                currentPet.play();
+                                                                                                System.out.println(currentPet.singlePlayMessage());
                                                                                         }
                                                                                 }
-                                                                                break;
+                                                                                if (currentPet instanceof Metallic) {
+                                                                                        if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
+                                                                                                currentPet.play();
+                                                                                                System.out.println(currentPet.singlePlayMessage());
+                                                                                        }
+                                                                                }
+                                                                        }
+                                                                        break;
 
-                                                                        case "4": // CLEAN CAGE/BOX
-                                                                                for (Animal currentPet : myShelter.getPetNames()) {
-                                                                                        if (currentPet instanceof Mammal) {
-                                                                                                if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
-                                                                                                        ((Mammal) currentPet).clean();
-                                                                                                        System.out.println(currentPet.getName() + "'s Litterbox has been cleaned.");
-                                                                                                }
-                                                                                        }
-                                                                                        if (currentPet instanceof Metallic) {
-                                                                                                if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
-                                                                                                        System.out.println(currentPet.getName() + " is a " + currentPet.getClassification() + " pet and doesn't use a Litterbox.");
-                                                                                                }
+                                                                case "2": // FEED
+                                                                        for (Animal currentPet : myShelter.getPetNames()) {
+                                                                                if (currentPet instanceof Mammal) {
+                                                                                        if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
+                                                                                                ((Mammal) currentPet).feed();
+                                                                                                System.out.println(currentPet.allFeedMessage());
                                                                                         }
                                                                                 }
-                                                                                break;
-                                                                        case "5": // OIL
-                                                                                for (Animal currentPet : myShelter.getPetNames()) {
-                                                                                        if (currentPet instanceof Metallic) {
-                                                                                                if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
-                                                                                                        ((Metallic) currentPet).oil();
-                                                                                                        System.out.println(currentPet.getName() + " has been well oiled.");
-                                                                                                }
-                                                                                        }
-                                                                                        if (currentPet instanceof Mammal) {
-                                                                                                if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
-                                                                                                        System.out.println(currentPet.getName() + " is a " + currentPet.getClassification() + " pet and doesn't like to be " + "...oiled.");
-                                                                                                }
+                                                                                if (currentPet instanceof Metallic) {
+                                                                                        if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
+                                                                                                System.out.println(currentPet.getName() + " is a " + currentPet.getClassification() + " pet and doesn't need to be feed.");
                                                                                         }
                                                                                 }
-                                                                                break;
-                                                                        case "6": // CHARGE
-                                                                                for (Animal currentPet : myShelter.getPetNames()) {
-                                                                                        if (currentPet instanceof Metallic) {
-                                                                                                if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
-                                                                                                        ((Metallic) currentPet).charge();
-                                                                                                        System.out.println(currentPet.getName() + " has been fully charged.");
-                                                                                                }
-                                                                                        }
-                                                                                        if (currentPet instanceof Mammal) {
-                                                                                                if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
-                                                                                                        System.out.println(currentPet.getName() + " is a " + currentPet.getClassification() + " pet and can't be charged");
-                                                                                                }
-                                                                                        }
-                                                                                }
-                                                                                break;
+                                                                        }
+                                                                        break;
 
-                                                                        case "7": // MAINTENANCE
-                                                                                for (Animal currentPet : myShelter.getPetNames()) {
-                                                                                        if (currentPet instanceof Metallic) {
-                                                                                                if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
-                                                                                                        ((Metallic) currentPet).maintenance();
-                                                                                                        System.out.println(currentPet.getName() + " has been well maintained.");
-                                                                                                }
-                                                                                        }
-                                                                                        if (currentPet instanceof Mammal) {
-                                                                                                if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
-                                                                                                        System.out.println(currentPet.getName() + " is a " + currentPet.getClassification() + " pet and can't be 'maintained'.");
-                                                                                                }
+                                                                case "3": // WATER
+                                                                        for (Animal currentPet : myShelter.getPetNames()) {
+                                                                                if (currentPet instanceof Mammal) {
+                                                                                        if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
+                                                                                                ((Mammal) currentPet).water();
+                                                                                                System.out.println(currentPet.allWaterMessage());
                                                                                         }
                                                                                 }
-                                                                                break;
-                                                                        case "8":
-                                                                                break;
-                                                                        case "9": // STATUS
-                                                                                System.out.println(Animal.getHeader());
-                                                                                for (Animal currentPet : myShelter.getPetNames()) {
-                                                                                        System.out.println(myShelter.petStatusBar(selectedPet.getName()));
+                                                                                if (currentPet instanceof Metallic) {
+                                                                                        if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
+                                                                                                System.out.println(currentPet.getName() + " is a " + currentPet.getClassification() + " pet and doesn't need water.");
+                                                                                        }
+                                                                                }
+                                                                        }
+                                                                        break;
+
+                                                                case "4": // CLEAN CAGE/BOX
+                                                                        for (Animal currentPet : myShelter.getPetNames()) {
+                                                                                if (currentPet instanceof Mammal) {
+                                                                                        if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
+                                                                                                ((Mammal) currentPet).clean();
+                                                                                                System.out.println(currentPet.getName() + "'s Litterbox has been cleaned.");
+                                                                                        }
+                                                                                }
+                                                                                if (currentPet instanceof Metallic) {
+                                                                                        if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
+                                                                                                System.out.println(currentPet.getName() + " is a " + currentPet.getClassification() + " pet and doesn't use a Litterbox.");
+                                                                                        }
+                                                                                }
+                                                                        }
+                                                                        break;
+
+                                                                case "5": // OIL
+                                                                        for (Animal currentPet : myShelter.getPetNames()) {
+                                                                                if (currentPet instanceof Metallic) {
+                                                                                        if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
+                                                                                                ((Metallic) currentPet).oil();
+                                                                                                System.out.println(currentPet.getName() + " has been well oiled.");
+                                                                                        }
+                                                                                }
+                                                                                if (currentPet instanceof Mammal) {
+                                                                                        if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
+                                                                                                System.out.println(currentPet.getName() + " is a " + currentPet.getClassification() + " pet and doesn't like to be " + "...oiled.");
+                                                                                        }
+                                                                                }
+                                                                        }
+                                                                        break;
+
+
+                                                                case "6": // CHARGE
+                                                                        for (Animal currentPet : myShelter.getPetNames()) {
+                                                                                if (currentPet instanceof Metallic) {
+                                                                                        if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
+                                                                                                ((Metallic) currentPet).charge();
+                                                                                                System.out.println(currentPet.getName() + " has been fully charged.");
+                                                                                        }
+                                                                                }
+                                                                                if (currentPet instanceof Mammal) {
+                                                                                        if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
+                                                                                                System.out.println(currentPet.getName() + " is a " + currentPet.getClassification() + " pet and can't be charged");
+                                                                                        }
+                                                                                }
+                                                                        }
+                                                                        break;
+
+                                                                case "7": // MAINTENANCE
+                                                                        for (Animal currentPet : myShelter.getPetNames()) {
+                                                                                if (currentPet instanceof Metallic) {
+                                                                                        if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
+                                                                                                ((Metallic) currentPet).maintenance();
+                                                                                                System.out.println(currentPet.getName() + " has been well maintained.");
+                                                                                        }
+                                                                                }
+                                                                                if (currentPet instanceof Mammal) {
+                                                                                        if (interactSingly.equalsIgnoreCase(currentPet.getName())) {
+                                                                                                System.out.println(currentPet.getName() + " is a " + currentPet.getClassification() + " pet and can't be 'maintained'.");
+                                                                                        }
+                                                                                }
+                                                                        }
+                                                                        break;
+                                                                case "8": // CHANG TO EXCERSIZE PETS
+                                                                        System.out.println("1 walk " +
+                                                                                "\n2 fly");
+                                                                        Scanner userPick = new Scanner(System.in);
+                                                                        String choiceWalkFly = userPick.nextLine();
+                                                                        switch (choiceWalkFly) {
+                                                                                case "1": // WALK
+                                                                                        for (Animal petToWalk : myShelter.getPetNames()) {
+                                                                                                if (petToWalk instanceof Llama) {
+                                                                                                        if (interactSingly.equalsIgnoreCase(petToWalk.getName())) {
+                                                                                                                ((Llama) petToWalk).walk();
+                                                                                                                System.out.println(petToWalk.getName() + " has been walked.");
+                                                                                                                break;
+                                                                                                        }
+                                                                                                }
+                                                                                                if (petToWalk instanceof MetallicLlama) {
+                                                                                                        if (interactSingly.equalsIgnoreCase(petToWalk.getName())) {
+                                                                                                                ((MetallicLlama) petToWalk).walk();
+                                                                                                                System.out.println(petToWalk.getName() + " has been walked.");
+                                                                                                                break;
+                                                                                                        }
+
+                                                                                                }
+                                                                                                if (petToWalk instanceof Tressym || petToWalk instanceof MetallicTressym) {
+                                                                                                        if (interactSingly.equalsIgnoreCase(petToWalk.getName())) {
+                                                                                                                System.out.println(petToWalk.getName() + " is a tressym. As cats, tressyms do not 'go on walks'.");
+                                                                                                                break;
+                                                                                                        }
+                                                                                                }
+
+                                                                                        }
                                                                                         break;
-                                                                                }
-                                                                }
+                                                                                case "2": // FLY
+                                                                                        for (Animal petToFly : myShelter.getPetNames()) {
+                                                                                                if (petToFly instanceof Tressym) {
+                                                                                                        if (interactSingly.equalsIgnoreCase(petToFly.getName())) {
+                                                                                                                ((Tressym) petToFly).fly();
+                                                                                                                System.out.println(petToFly.getName() + " has been walked.");
+                                                                                                                break;
+                                                                                                        }
+
+                                                                                                }
+                                                                                                if (petToFly instanceof MetallicTressym) {
+                                                                                                        if (interactSingly.equalsIgnoreCase(petToFly.getName())) {
+                                                                                                                ((MetallicTressym) petToFly).fly();
+                                                                                                                System.out.println(petToFly.getName() + " has been walked.");
+                                                                                                                break;
+                                                                                                        }
+                                                                                                }
+                                                                                                if (petToFly instanceof Llama || petToFly instanceof MetallicLlama) {
+                                                                                                        if (interactSingly.equalsIgnoreCase(petToFly.getName())) {
+                                                                                                                System.out.println(petToFly.getName() + " is a llama. As such, llamas do not like to go flying.");
+                                                                                                                break;
+                                                                                                        }
+                                                                                                }
+                                                                                        }
+                                                                                        break;
+                                                                        }break;
+                                                                case "9":
+                                                                        System.out.println(Animal.getHeader());
+                                                                        for (Animal currentPet : myShelter.getPetNames()) {
+                                                                                System.out.println(myShelter.petStatusBar(selectedPet.getName()));
+                                                                                break;
+                                                                        }
+                                                                        break;
+                                                                default:
+                                                                        System.out.println("You have entered an INVALID choice.");
                                                         }
-                                                        else{
-                                                                        System.out.println("I'm sorry, we don't appear to have any animal in our shelter by that name...");
-                                                                }
+                                                }
+                                        }break;
 
+                                default:
+                                        System.out.println("We dont seem to have any pet by that name in the Shelter...");
 
-                                                        }
-
-
-
-
-
-                                        }
-break;
                                 case "5": //INTERACT WITH ALL THE ANIMALS
                                         System.out.println("What would you like to do with ALL the pets today?" +
                                                 "\n1: PLAY" +
@@ -280,7 +333,9 @@ break;
                                                 "\n5: OIL" +
                                                 "\n6: CHARGE" +
                                                 "\n7: MAINTENANCE" +
-                                                "\n8: STATUS");
+                                                "\n8: STATUS" +
+                                                "\n9: TAKE FLYING" +
+                                                "\n0: TAKE ON A WALK");
                                         Scanner allPetIntact = new Scanner(System.in);
                                         String allPetInteract = allPetIntact.nextLine();
 
@@ -311,7 +366,7 @@ break;
                                                         break;
                                                 case "7":
                                                         myShelter.allMaintenance();
-                                                        System.out.println("all Metallic pets have been played maintained.");
+                                                        System.out.println("all Metallic pets have been fully maintained.");
                                                         break;
                                                 case "8":
                                                         System.out.println(Animal.getHeader());
@@ -319,8 +374,17 @@ break;
                                                                 System.out.println(myShelter.petStatusBar(currentPet.getName()));
                                                         }
                                                         break;
-                                        }
-                                        break;
+                                                case "9": //fly
+                                                        myShelter.allFly();
+                                                        System.out.println("all Tressyms have been taken out to fly.");
+                                                        break;
+                                                case "0": //fly
+                                                        myShelter.allWalk();
+                                                        System.out.println("all Llamas have been taken out to walk.");
+                                                        break;
+                                        }break;
+
+
 
                                 case "0":
                                         gamePlay = false;
