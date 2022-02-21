@@ -185,16 +185,20 @@ public class PetShelter {
 
 
     public void mammalTick() {
-        Mammal.hungerLevel -= 1;
-        Mammal.thirstLevel -= 1;
-        Animal.boredomLevel += 1;
-        Mammal.wasteLevel += 10;
+        for (Animal animal : petShelter){
+            if (animal instanceof Mammal) {
+                animal.tick();
+            }
+        }
+
     }
     public void robotTick() {
-        Metallic.oilLevel -= 1;
-        Metallic.maintenanceLevel -= 1;
-        Metallic.chargeLevel -=20;
-        Animal.boredomLevel += 1;
+        for (Animal animal : petShelter) {
+            if (animal instanceof Metallic) {
+                animal.tick();
+            }
+        }
+
     }
 
 
@@ -211,7 +215,7 @@ public class PetShelter {
         Animal pet = findPetByName(name);
         if (pet instanceof Mammal) {
             petStatusString += String.format("| %-10s | %-16s | %-7s | %-11s | %-6s | %-6s | %-3s | %-3s |\n",
-                    pet.getName(), pet.getType(), Animal.getBoredomLevel(), ((Mammal) pet).getHungerLevel(), ((Mammal) pet).getThirstLevel(), "N/A", "N/A", "N/A");
+                    pet.getName(), pet.getType(), pet.getBoredomLevel(), ((Mammal) pet).getHungerLevel(), ((Mammal)pet).getThirstLevel(), "N/A", "N/A", "N/A");
         }
         else if (pet instanceof Metallic) {
             petStatusString += String.format("| %-10s | %-16s | %-7s | %-11s | %-6s | %-6s | %-3s | %-3s |\n",

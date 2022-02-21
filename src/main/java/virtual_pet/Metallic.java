@@ -1,17 +1,17 @@
 package virtual_pet;
 
 public abstract class Metallic extends Animal {
-    protected static int oilLevel;
-    protected static int maintenanceLevel;
-    protected static int chargeLevel;
+    protected int oilLevel;
+    protected int maintenanceLevel;
+    protected int chargeLevel;
     protected String classification;
 
     public Metallic(String name, int age, String pronouns) {
         super(name, age, pronouns);
-        Metallic.oilLevel = 90;
-        Metallic.maintenanceLevel = 50;
-        this.classification = "Metallic";
-        Metallic.chargeLevel = 100;
+        oilLevel = randomNum(5, 100);
+        maintenanceLevel = randomNum(5, 100);
+        classification = "Metallic";
+        chargeLevel = randomNum(5, 100);
     }
 
     public int getOilLevel() {
@@ -26,36 +26,43 @@ public abstract class Metallic extends Animal {
         return classification;
     }
 
-    public static int getChargeLevel() {
+    public int getChargeLevel() {
         return chargeLevel;
     }
 
     @Override
     public void play() {
-        Metallic.oilLevel -= 10;
-        Metallic.maintenanceLevel -= 10;
-        Metallic.chargeLevel -= 20;
-        Animal.happinessLevel += 10;
-        Animal.boredomLevel -= 10;
+        oilLevel = Math.max(0,oilLevel-10);
+        maintenanceLevel = Math.max(0, maintenanceLevel - 10);
+        chargeLevel = Math.max(0, chargeLevel - 10);
+        happinessLevel = Math.min(100, happinessLevel + 20);
+        boredomLevel = Math.max(0, boredomLevel - 10);
     }
 
     public void oil() {
-        Metallic.oilLevel += 10;
-        Metallic.maintenanceLevel += 20;
+        oilLevel = Math.min(100, oilLevel+10);
+        maintenanceLevel = Math.min(100, maintenanceLevel + 20);
     }
 
     public void maintenance() {
-        Metallic.maintenanceLevel += 20;
+        maintenanceLevel = Math.min(100, maintenanceLevel + 20);
     }
 
     public void charge() {
-        Metallic.chargeLevel += 100;
+        chargeLevel = Math.min(100, chargeLevel + 25);
     }
 
 
     public String allMaintenanceMessage() {
         return getName() + " has been Maintenanced" +
-                "\nLevel is now: " + Metallic.maintenanceLevel;
+                "\nLevel is now: " + maintenanceLevel;
+    }
+
+    public void tick() {
+        oilLevel = Math.max(0, oilLevel - 1);
+        maintenanceLevel = Math.max(0, maintenanceLevel - 1);
+        chargeLevel = Math.max(0, chargeLevel - 20);
+        boredomLevel = Math.min(100, boredomLevel + 1);
     }
 }
 

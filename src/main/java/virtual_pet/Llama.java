@@ -10,10 +10,10 @@ public class Llama extends Mammal implements Walkable {
 
 @Override
 public void walk() {
-        Mammal.hungerLevel -= 20;
-        Animal.boredomLevel += 40;
-        Mammal.thirstLevel -= 20;
-        Mammal.wasteLevel -= 20;
+        hungerLevel = Math.max(0, hungerLevel - 20);
+        boredomLevel = Math.min(100, boredomLevel + 40);
+        thirstLevel = Math.max(0, thirstLevel - 20);
+        wasteLevel = Math.max(0, wasteLevel - 20);
 }
 
 @Override

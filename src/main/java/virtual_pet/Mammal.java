@@ -1,29 +1,29 @@
 package virtual_pet;
 
 public abstract class Mammal extends Animal {
-    protected static int hungerLevel;
-    protected static int thirstLevel;
-    protected static int wasteLevel;
+    protected int hungerLevel;
+    protected int thirstLevel;
+    protected int wasteLevel;
     protected String classification;
 
 
     public Mammal(String name, int age, String pronouns) {
         super(name, age, pronouns);
-        Mammal.hungerLevel = 50;
-        Mammal.thirstLevel = 20;
-        Mammal.wasteLevel = 40;
+        hungerLevel = randomNum(5, 100);
+        thirstLevel = randomNum(5, 100);
+        wasteLevel = randomNum(5, 100);
         this.classification = "Mammal";
     }
 
-    public static int getHungerLevel() {
+    public int getHungerLevel() {
         return hungerLevel;
     }
 
-    public static int getThirstLevel() {
+    public int getThirstLevel() {
         return thirstLevel;
     }
 
-    public static int getWasteLevel() {
+    public int getWasteLevel() {
         return wasteLevel;
     }
 
@@ -34,10 +34,10 @@ public abstract class Mammal extends Animal {
 
     @Override
     public void play() {
-        Mammal.hungerLevel -= 20;
-        Animal.boredomLevel += 40;
-        Mammal.thirstLevel -= 20;
-        Animal.happinessLevel += 30;
+        hungerLevel = Math.max(0, hungerLevel - 20);
+        boredomLevel = Math.min(100, boredomLevel + 40);
+        thirstLevel = Math.max(0, thirstLevel - 20);
+        happinessLevel = Math.min(100, happinessLevel + 30);
     }
 
     public String allPlayMessage() {
@@ -45,22 +45,28 @@ public abstract class Mammal extends Animal {
     }
 
     public void feed() {
-        Mammal.hungerLevel += 30;
-        Mammal.thirstLevel -= 10;
-        Animal.boredomLevel += 20;
-        Animal.happinessLevel += 10;
+        hungerLevel = Math.min(100, hungerLevel + 30);
+        thirstLevel = Math.max(0, thirstLevel - 10);
+        boredomLevel = Math.min(100, boredomLevel + 20);
+        happinessLevel = Math.min(100, happinessLevel + 10);
     }
 
     public void water() {
-        Mammal.thirstLevel += 40;
-        Animal.happinessLevel += 25;
+        thirstLevel = Math.min(100, thirstLevel + 40);
+        happinessLevel = Math.min(100, happinessLevel + 25);
     }
 
     public void clean() {
-        Mammal.wasteLevel -= 20;
-        Animal.happinessLevel += 20;
+        wasteLevel = Math.max(0, wasteLevel - 20);
+        happinessLevel = Math.min(100, happinessLevel + 20);
     }
 
+    public void tick() {
+        hungerLevel = Math.max(0, hungerLevel - 1);
+        thirstLevel = Math.max(0, thirstLevel - 1);
+        boredomLevel = Math.min(100, boredomLevel + 1);
+        wasteLevel = Math.min(100, wasteLevel + 10);
+    }
 
 }
 

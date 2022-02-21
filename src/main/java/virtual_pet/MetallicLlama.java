@@ -16,8 +16,8 @@ public class MetallicLlama extends Metallic implements Walkable{
 
     @Override
     public void walk() {
-        Metallic.oilLevel -=10;
-        Metallic.maintenanceLevel -=10;
-        Metallic.chargeLevel -=20;
+        oilLevel = Math.max(0, oilLevel - 10);
+        maintenanceLevel = Math.max(0, maintenanceLevel - 10);
+        chargeLevel = Math.max(0, chargeLevel - 20);
     }
 }
